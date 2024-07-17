@@ -18,6 +18,11 @@
 
   > Ewels P, Magnusson M, Lundin S, Käller M. MultiQC: summarize analysis results for multiple tools and samples in a single report. Bioinformatics. 2016 Oct 1;32(19):3047-8. doi: 10.1093/bioinformatics/btw354. Epub 2016 Jun 16. PubMed PMID: 27312411; PubMed Central PMCID: PMC5039924.
 
+- [fastp](https://academic.oup.com/bioinformatics/article/34/17/i884/5093234)
+  > Chen, S., Zhou, Y., Chen, Y., & Gu, J. (2018). fastp: an ultra-fast all-in-one FASTQ preprocessor. Bioinformatics, 34(17), i884–i890. https://doi.org/10.1093/BIOINFORMATICS/BTY560
+
+- [bwa](https://academic.oup.com/bioinformatics/article/25/14/1754/225615)
+  > Li, H., & Durbin, R. (2009). Fast and accurate short read alignment with Burrows–Wheeler transform. Bioinformatics, 25(14), 1754–1760. https://doi.org/10.1093/BIOINFORMATICS/BTP324
 ## Software packaging/containerisation tools
 
 - [Anaconda](https://anaconda.com)
