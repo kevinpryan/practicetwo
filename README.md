@@ -26,6 +26,7 @@
    major pipeline sections and the types of output it produces. You're giving an overview to someone new
    to nf-core here, in 15-20 seconds. For an example, see https://github.com/nf-core/rnaseq/blob/master/README.md#introduction
 -->
+
 **nf-core/practice2** is a bioinformatics pipeline used to carry out QC and alignment with `bwa` on FASTQ files from WES. It takes a samplesheet and FASTQ files as input, performs quality control (QC), trimming and alignment, and produces BAM alignment files and an extensive QC report.
 
 ![image](assets/nf-hlamajority-without-subset.drawio.png)
@@ -39,7 +40,6 @@
 
 > [!NOTE]
 > If you are new to Nextflow and nf-core, please refer to [this page](https://nf-co.re/docs/usage/installation) on how to set-up Nextflow. Make sure to [test your setup](https://nf-co.re/docs/usage/introduction#how-to-run-a-pipeline) with `-profile test` before running the workflow on actual data.
-
 
 First, prepare a samplesheet with your input data that looks as follows:
 
