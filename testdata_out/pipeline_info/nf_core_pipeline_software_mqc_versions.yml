@@ -1,0 +1,5 @@
+FASTQC:
+  fastqc: 0.12.1
+Workflow:
+    nf-core/practicetwo: v1.0dev
+    Nextflow: 24.04.3
