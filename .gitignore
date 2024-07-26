@@ -7,3 +7,13 @@ testing/
 testing*
 *.pyc
 testdata/
+*fastq*
+*bam*
+chr6*
+*report*
+*timeline*
+*trace*
+params*
+*dag*
+SRR*
+*.log
