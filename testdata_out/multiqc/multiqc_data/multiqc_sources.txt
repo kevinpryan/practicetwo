@@ -1,0 +1,3 @@
+Module	Section	Sample Name	Source
+FastQC	all_sections	SRR7366586_2	/home/kevin/Documents/PhD/nf-core-test-pipeline/nf-core-practice2/nf-core-practicetwo/work/13/dd94d0035252f35d180a03bafe0a01/4/SRR7366586_2_fastqc.zip
+FastQC	all_sections	SRR7366586_1	/home/kevin/Documents/PhD/nf-core-test-pipeline/nf-core-practice2/nf-core-practicetwo/work/13/dd94d0035252f35d180a03bafe0a01/3/SRR7366586_1_fastqc.zip

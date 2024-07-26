@@ -6,6 +6,9 @@
 
 include { FASTQC                 } from '../modules/nf-core/fastqc/main'
 include { MULTIQC                } from '../modules/nf-core/multiqc/main'
+include { FASTP                  } from '../modules/nf-core/fastp/main'
+include { BWA_INDEX } from '../modules/nf-core/bwa/index/main'
+include { BWA_MEM                } from '../modules/nf-core/bwa/mem/main'
 include { paramsSummaryMap       } from 'plugin/nf-validation'
 include { paramsSummaryMultiqc   } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 include { softwareVersionsToYAML } from '../subworkflows/nf-core/utils_nfcore_pipeline'
@@ -33,6 +36,46 @@ workflow PRACTICETWO {
     FASTQC (
         ch_samplesheet
     )
+/*
+ch_samplesheet,
+        adapter_fasta: params.adapter_fasta,
+        discard_trimmed_pass: false,
+        save_trimmed_fail: true,
+        save_merged: false
+*/
+    discard_trimmed_pass = false
+    save_trimmed_fail = false
+    save_merged = false
+
+    FASTP(
+        ch_samplesheet,
+        [],
+        discard_trimmed_pass,
+        save_trimmed_fail,
+        save_merged
+    )
+    def fake_meta = [:]
+    fake_meta.id = "ref.fa"
+
+    BWA_INDEX(
+        meta: fake_meta,
+        fasta: params.fasta
+    )
+    /*
+    tuple val(meta) , path(reads)
+    tuple val(meta2), path(index)
+    tuple val(meta3), path(fasta)
+    val   sort_bam
+    */
+    tup_fasta = [fake_meta, params.fasta]
+
+    BWA_MEM(
+        FASTP.out.reads,
+        BWA_INDEX.out.index,
+        tup_fasta,
+        true
+    )
+
     ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.collect{it[1]})
     ch_versions = ch_versions.mix(FASTQC.out.versions.first())
 
